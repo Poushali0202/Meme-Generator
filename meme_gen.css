@@ -1,0 +1,125 @@
+:root {
+    font-family: Helvetica;
+    font-size: 14px;
+}
+
+* {
+    font: inherit;
+}
+.main {
+    background-image: linear-gradient(to top, rgba(199, 21, 133,0.1), rgba(199, 21, 133,1));
+    border-radius: 35px;
+    margin-top: 50px;
+    margin-left: 90px;
+    margin-right: 90px;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color: #AFEEEE; left:200px; top:200px;}
+    75%  {background-color: #3CB371; left:0px; top:200px;}
+    100% {background-color: #FFDAB9; left:0px; top:0px;}
+    125% {background-color: #40a0a0; left: 0px; top:200px;}
+}
+
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-decoration-color: ivory;
+    text-shadow: 2px 2px ivory;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: inherit;
+    
+}
+.top-text {
+    border-radius: 40px;
+    margin-top: 10px;
+    position: center;   
+}
+.botton-text {
+    border-radius: 40px;
+    padding-top: 20px;
+    float: right;
+
+}
+
+#meme_canvas {
+    max-width: 300px;
+}
+.canv {
+    padding-left: 520px;
+    padding-bottom: 10px;
+}
+.links {
+    margin-left: 35%;
+
+}
+.fa {
+    padding: 15px;
+    font-size: 80px;
+    width: 90px;
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    float: center;
+}
+  #generate-btn {
+      border-radius: 20px;
+      height: 30px;
+      width: 150px;
+      margin-bottom: 15px;
+      transition-duration: 0.4s;
+      margin-left: 45%;
+    }
+      
+    #generate-btn:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+
+    }
+
+    #btnDownload {
+      border-radius: 20px;
+      height: 30px;
+      width: 150px;
+      margin-bottom: 15px;
+      transition-duration: 0.4s;
+      margin-left: 45%;
+}
+#btnDownload:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+
+
+    #image-input {
+      border-radius: 120px;
+      height: 30px;
+      margin-bottom: 10px;
+      padding-left: 580px;
+      padding-top: 80px;
+    }
+    .headline {
+        padding-left: 80px;
+        
+    }
+    #top-text {
+        resize: none;
+    }
+    #bottom-text {
+        resize: none;
+    }
+    .subhdline {
+        padding-right: 90px;
+        float: right;
+        
+    }
+    
+ 

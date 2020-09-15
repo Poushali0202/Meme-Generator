@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Meme Generator</title>
+        <link rel="stylesheet" href="meme_gen.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main">
+            <h1>MEME GENERATOR</h1>
+        <div class="headline">
+            <textarea id="top-text" style="border-radius: 25px;text-align: center;"></textarea>
+            Text Size: <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+            Colour Change: <input type="color" id="tcolor">
+            
+        </div>
+        <div class="subhdline">
+            <textarea id="bottom-text" style="border-radius: 25px;text-align: center;"></textarea>
+            Text size: <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+            Colour Change: <input type="color" id="bcolor">
+        </div>
+        <p>
+            <input type="file" id="image-input" accept="image/*" style="border-radius: 20px;">
+        </p>
+        <p>
+            <button id="generate-btn"><strong>Generate</strong></button>
+        </p>
+        <div class="canv">
+            <canvas id="meme_canvas" title="Right click -> &quot;Save image as...&quot;"></canvas>
+        </div>
+
+        <button type="button" id="btnDownload">Download</button>
+        <button type="button" id="btnDisplay" style="display: none;">Display</button>
+        <img src="" id="imgConverted">
+        <hr>
+        <div class="links">
+            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+        </div>
+        </div>
+        
+        <script src="meme_gen.js"></script>
+        <script src="FileSaver.js-2.0.4\src\FileSaver.js"></script>
+        <script>
+            const btnDisplay = document.querySelector("#btnDisplay");
+            const btnDownload = document.querySelector("#btnDownload");
+            const imgConverted = document.querySelector("#imgConverted");
+            const meme_canvas = document.querySelector("#meme_canvas");
+
+            btnDisplay.addEventListener("click", function () {
+                const dataURI = meme_canvas.toDataURL("image/*");
+                imgConverted.src = dataURI;
+                
+
+            });
+
+            btnDownload.addEventListener("click", function () {
+                 if (window.navigator.msSaveBlob) {
+                     window.navigator.msSaveBlob(meme_canvas.msSaveBlob(), "canvas-image.png");
+
+                 } else {
+                     const a = document.createElement("a");
+
+                     document.body.appendChild(a);
+                     a.href = meme_canvas.toDataURL();
+                     a.download = "meme-generator.png";
+                     a.click();
+                     document.body.removeChild(a);
+                 }
+
+
+            });
+        </script>
+    </body>
+</html>
